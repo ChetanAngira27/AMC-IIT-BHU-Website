@@ -1,0 +1,123 @@
+@import "tailwindcss";
+
+/* ═══════════════════════════════════════════
+   AMC IIT BHU — Global Design System
+   ═══════════════════════════════════════════ */
+
+/* ─── Fonts ─── */
+.font-orbitron {
+  font-family: "Orbitron", sans-serif;
+}
+.font-inter {
+  font-family: "Inter", sans-serif;
+}
+.vt323-regular {
+  font-family: "VT323", monospace;
+  font-weight: 400;
+  font-style: normal;
+}
+
+/* ─── Propeller Spin ─── */
+@keyframes spin-slow {
+  from { transform: rotate(0deg); }
+  to { transform: rotate(360deg); }
+}
+@keyframes spin-slow-reverse {
+  from { transform: rotate(360deg); }
+  to { transform: rotate(0deg); }
+}
+.animate-spin-slow {
+  animation: spin-slow 3s linear infinite;
+}
+.animate-spin-slow-reverse {
+  animation: spin-slow-reverse 3s linear infinite;
+}
+
+/* ─── Existing Keyframes ─── */
+.movex {
+  animation-name: moveanimation;
+  animation-duration: 5s;
+  animation-timing-function: linear;
+  animation-iteration-count: infinite;
+}
+.helma {
+  animation: animatehelma;
+  animation-duration: 10s;
+  animation-timing-function: linear;
+  animation-iteration-count: infinite;
+}
+.helmb {
+  animation: animatehelmb;
+  animation-duration: 10s;
+  animation-timing-function: linear;
+  animation-iteration-count: infinite;
+}
+@keyframes moveanimation {
+  from { transform: translateX(0%); }
+  to { transform: translateX(-100%); }
+}
+@keyframes animatehelma {
+  from { transform: translateX(0%); }
+  to { transform: translateX(-50%); }
+}
+@keyframes animatehelmb {
+  from { transform: translateX(-50%); }
+  to { transform: translateX(0%); }
+}
+
+/* ─── Glassmorphism Base ─── */
+.glass {
+  background: rgba(255, 255, 255, 0.04);
+  backdrop-filter: blur(16px);
+  -webkit-backdrop-filter: blur(16px);
+  border: 1px solid rgba(255, 255, 255, 0.08);
+}
+
+/* ─── Glow Utilities ─── */
+.glow-cyan {
+  box-shadow: 0 0 20px rgba(0, 245, 255, 0.2);
+}
+.glow-magenta {
+  box-shadow: 0 0 20px rgba(255, 0, 255, 0.2);
+}
+.text-glow-cyan {
+  text-shadow: 0 0 20px rgba(0, 245, 255, 0.4);
+}
+.text-glow-magenta {
+  text-shadow: 0 0 20px rgba(255, 0, 255, 0.4);
+}
+
+/* ─── Scrollbar ─── */
+::-webkit-scrollbar {
+  width: 6px;
+}
+::-webkit-scrollbar-track {
+  background: #0A0F1C;
+}
+::-webkit-scrollbar-thumb {
+  background: rgba(0, 245, 255, 0.2);
+  border-radius: 3px;
+}
+::-webkit-scrollbar-thumb:hover {
+  background: rgba(0, 245, 255, 0.4);
+}
+
+/* ─── Selection ─── */
+::selection {
+  background: rgba(0, 245, 255, 0.3);
+  color: white;
+}
+
+/* ─── Smooth scroll ─── */
+html {
+  scroll-behavior: smooth;
+}
+
+/* ─── Global body reset ─── */
+body {
+  font-family: "Inter", sans-serif;
+  background: #0A0F1C;
+  color: #ffffff;
+  -webkit-font-smoothing: antialiased;
+  -moz-osx-font-smoothing: grayscale;
+}

@@ -1,0 +1,42 @@
+// This is your Prisma schema file,
+// learn more about it in the docs: https://pris.ly/d/prisma-schema
+
+// Looking for ways to speed up your queries, or scale easily with your serverless or edge functions?
+// Try Prisma Accelerate: https://pris.ly/cli/accelerate-init
+
+generator client {
+  provider = "prisma-client"
+  output   = "../generated/prisma"
+}
+
+datasource db {
+  provider = "postgresql"
+}
+model Team{
+  teamId Int @id @default(autoincrement())
+  teamName String @unique @db.VarChar(50)
+  leaderName String 
+  email String @unique
+  rollNum Int 
+  depart String @db.VarChar(50)
+  num String @unique @db.VarChar(15)
+
+  mate1Name String?
+  mate1rollNum Int?
+  mate1Dept String? @db.VarChar(50)
+
+  mate2Name String? 
+  mate2rollNum Int?
+  mate2Dept String? @db.VarChar(50)
+
+  mate3Name String? 
+  mate3rollNum Int?
+  mate3Dept String? @db.VarChar(50)
+
+  mate4Name String? 
+  mate4rollNum Int?
+  mate4Dept String? @db.VarChar(50)
+
+  TransactionId String @unique
+  time DateTime @default(now())
+}
